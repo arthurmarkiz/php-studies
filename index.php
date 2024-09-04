@@ -24,7 +24,7 @@ else
 
 // --------------------------------
 
-function sum(int $x, int $y) {
+function sum(int $x, int $y): int {
     return $x + $y;
 }
 echo '<br/>' . sum(2, 3) . '<br/>';
@@ -122,8 +122,70 @@ $length = 10;
 while ($i < $length) {
     echo $i++ . "<br/>";
 }
+unregister_tick_function("onTick");
 
 echo '<br/>';echo '<br/>';
 // --------------------------------
+
+// require / require_once / include / include_once 
+
+// require "file.php";
+// include "file.php";
+
+// require: mandatory (will cause a fatal error if not found)
+// include: will cause an error if not found, but the app will continue running
+// _once: will include/require if not have in the file yet
+
+// --------------------------------
+
+function multiplication(int|float $n1, int|float $n2): int|float {
+    return $n1 * $n2;
+}
+$x1 = 5;
+echo multiplication(n1: $x1, n2: 10) . '<br/>';
+
+// --------------------------------
+
+function sumAll(int ...$numbers): int {
+    // $sum = 0;
+    // foreach($numbers as $number) {
+    //     $sum += $number;
+    // }
+    // return $sum;
+    return array_sum($numbers);
+}
+echo sumAll(3, 5, 10, 2, 20) . '<br/>';
+
+$anotherNumbers = [10, 20, 30, 40];
+echo sumAll(...$anotherNumbers) . '<br/>';
+
+// --------------------------------
+// Anonymous function
+
+$subtract = function (int $n1, int $n2): int {
+    return $n1 - $n2;
+};
+echo $subtract(5, 2) . '<br/>';
+
+// --------------------------------
+// Arrow function
+
+$array = [1, 2, 3, 4];
+echo '<pre>';
+print_r(array_map(fn($number) => $number * 2, $array));
+echo '</pre>';
+
+echo '<br/>';echo '<br/>';
+// --------------------------------
+// Date & Time
+
+date_default_timezone_set('UTC');
+echo time() . '<br/>';
+echo date_default_timezone_get() . '<br/>';
+echo date('d/m/Y g:ia') . '<br/><br/>';
+
+date_default_timezone_set('America/Sao_Paulo');
+echo date_default_timezone_get() . '<br/>';
+echo date('d/m/Y g:ia');
 
 ?>
