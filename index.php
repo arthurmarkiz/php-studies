@@ -106,8 +106,8 @@ $paymentStatusDisplay = match($paymentStatus) {
 };
 
 echo "Match: " . $paymentStatusDisplay;
-echo '<br/>';echo '<br/>';
 
+echo '<br/>';echo '<br/>';
 // --------------------------------
 
 // declare - ticks (will be called after a certain number of functions pass)
@@ -123,9 +123,7 @@ while ($i < $length) {
     echo $i++ . "<br/>";
 }
 
-// declare - encoding
-
-
-// declare - strict_types
+echo '<br/>';echo '<br/>';
+// --------------------------------
 
 ?>
