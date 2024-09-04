@@ -175,7 +175,7 @@ echo '<pre>';
 print_r(array_map(fn($number) => $number * 2, $array));
 echo '</pre>';
 
-echo '<br/>';echo '<br/>';
+echo '<br/><br/>';
 // --------------------------------
 // Date & Time
 
@@ -188,4 +188,43 @@ date_default_timezone_set('America/Sao_Paulo');
 echo date_default_timezone_get() . '<br/>';
 echo date('d/m/Y g:ia');
 
+echo '<br/><br/>';
+// --------------------------------
+/* Arrays
+
+* Will combine array1 as Keys and array2 as Values:
+array_combine($array1, $array2);
+
+* Will filter the array with some rule:
+array_filter($array, function);
+
+* Find a key with match:
+array_keys($array);
+array_keys($array, 10 (optional));
+
+* Do someting on each element of the array.
+array_map(function, $array);
+
+* Merge arrays:
+array_merge($array1, $array2, $array3);
+
+* Will accumulate any values of the array:
+array_reduce($array, function($total, $item));
+
+* Search some Value of the array:
+array_search(value, $array);
+
+* Compare arrays (keys/values) and return the key/value that is not in all arrays:
+array_diff($array1, $array2);
+
+* Sort by values:
+asort($array);
+
+* Sort by keys:
+ksort($array);
+
+* Sort based on a function
+usort($array, function)
+
+*/
 ?>
